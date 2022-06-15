@@ -70,8 +70,8 @@ public class BankTransactionController {
 	}
 
 	public void createBankConfiguration(String name) {
-//		Optional<BankConfiguration> optionalBankConfiguration = bankConfigurationService.findByBankName(name);
-//		if (optionalBankConfiguration.isEmpty()) {
+		Optional<BankConfiguration> optionalBankConfiguration = bankConfigurationService.findByBankName(name);
+		if (optionalBankConfiguration.isEmpty()) {
 			Bank bank = new Bank();
 			bank.setBankName(name);
 			BankConfiguration bankConfiguration1 = new BankConfiguration();
@@ -83,24 +83,24 @@ public class BankTransactionController {
 			bankConfiguration1.setBank(bank);
 			bankConfigurationService.save(bankConfiguration1);
 			
-			BankConfiguration bankConfiguration2 = new BankConfiguration();
-			BankMapping bankFileMapping2= new BankMappingBuilder().
-					setAmount("AMNT").setFromAccnt("From_Accnt").setToAccnt("To_Accnt").setBankCode("BANK_CODE")
-					.setProjectCode("PCODE").setDonatorName("From_Name").setDeductionDate("Post_Date").getBankMapping();
-			bankConfiguration2.setBankMapping(bankFileMapping2);
-			bankConfiguration2.setBankName(name);
-			bankConfiguration2.setBank(bank);
-			bankConfigurationService.save(bankConfiguration2);
-			
-			BankConfiguration bankConfiguration3 = new BankConfiguration();
-			BankMapping bankFileMapping3 = new BankMappingBuilder().
-					setAmount("AMNT").setFromAccnt("From_Accnt").setToAccnt("To_Accnt").setBankCode("BANK_CODE")
-					.setProjectCode("PCODE").setDonatorName("From_Name").setDeductionDate("Post_Date").getBankMapping();
-			bankConfiguration3.setBankMapping(bankFileMapping3);
-			bankConfiguration3.setBankName(name);
-			bankConfiguration3.setBank(bank);
-			bankConfigurationService.save(bankConfiguration3);	
-//		}
+//			BankConfiguration bankConfiguration2 = new BankConfiguration();
+//			BankMapping bankFileMapping2= new BankMappingBuilder().
+//					setAmount("AMNT").setFromAccnt("From_Accnt").setToAccnt("To_Accnt").setBankCode("BANK_CODE")
+//					.setProjectCode("PCODE").setDonatorName("From_Name").setDeductionDate("Post_Date").getBankMapping();
+//			bankConfiguration2.setBankMapping(bankFileMapping2);
+//			bankConfiguration2.setBankName(name);
+//			bankConfiguration2.setBank(bank);
+//			bankConfigurationService.save(bankConfiguration2);
+//			
+//			BankConfiguration bankConfiguration3 = new BankConfiguration();
+//			BankMapping bankFileMapping3 = new BankMappingBuilder().
+//					setAmount("المبلغ").setFromAccnt("حساب المستفيد").setToAccnt("رقم حساب المتبرع").setBankCode("BANK_CODE")
+//					.setDonatorName("اسم المتبرع").setCurrency("العملة").getBankMapping();
+//			bankConfiguration3.setBankMapping(bankFileMapping3);
+//			bankConfiguration3.setBankName(name);
+//			bankConfiguration3.setBank(bank);
+//			bankConfigurationService.save(bankConfiguration3);	
+		}
 	}
 
 	@GetMapping("getAllUsers")

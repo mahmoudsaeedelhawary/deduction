@@ -13,4 +13,5 @@ public interface BankConfigurationRepository extends JpaRepository<BankConfigura
 	//Optional<BankConfiguration> findByBankBankName(String bankName) ;
 	
 	Optional<BankConfiguration> findByBankName(String bankName) ;
+	
 }
