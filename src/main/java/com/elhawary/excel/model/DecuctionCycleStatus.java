@@ -27,7 +27,9 @@ public class DecuctionCycleStatus implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long decuction_cycle_statusId;
 
-	private String name_arabic;
-	private String name_english;
+	private String nameArabic ;
+	private String nameEnglish ;
+	
+	
 
 }

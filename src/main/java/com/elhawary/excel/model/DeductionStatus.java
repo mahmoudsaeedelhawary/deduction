@@ -23,6 +23,7 @@ public class DeductionStatus {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long deductionStatusId ;
 	
-	private String name_arabic ;
-	private String name_english ;
+	private String nameArabic ;
+	private String nameEnglish ;
+	
 }

@@ -9,8 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -34,11 +36,20 @@ public class BankFile implements Serializable {
 	private String fileName;
 	private String fileUri;
 
-//	private ConfigDetails configDetails;
-	
-	@OneToOne(fetch = FetchType.EAGER, optional = false, cascade = CascadeType.ALL)
+	private ConfigDetails configDetails;
+
+	@OneToOne(cascade = CascadeType.ALL, optional = false, fetch = FetchType.EAGER)
 	@JoinColumn(name = "bank_file_status_id")
 	private BankFileStatus bankFileStatus;
+	
+//	@JsonIgnore
+//	@ManyToOne(fetch = FetchType.LAZY)
+//	@JoinColumn(name = "bank_id")
+//	private Bank bank;
+//  @JsonIgnore
+//	@ManyToOne(fetch = FetchType.LAZY)
+//	@JoinColumn(name = "deduction_cycle_id")
+//  private DeductionCycle deductionCycle ;
 
 	public Long getBankFileId() {
 		return bankFileId;
@@ -64,13 +75,13 @@ public class BankFile implements Serializable {
 		this.fileUri = fileUri;
 	}
 
-//	public ConfigDetails getConfigDetails() {
-//		return configDetails;
-//	}
-//
-//	public void setConfigDetails(ConfigDetails configDetails) {
-//		this.configDetails = configDetails;
-//	}
+	public ConfigDetails getConfigDetails() {
+		return configDetails;
+	}
+
+	public void setConfigDetails(ConfigDetails configDetails) {
+		this.configDetails = configDetails;
+	}
 
 	public BankFileStatus getBankFileStatus() {
 		return bankFileStatus;
@@ -79,17 +90,5 @@ public class BankFile implements Serializable {
 	public void setBankFileStatus(BankFileStatus bankFileStatus) {
 		this.bankFileStatus = bankFileStatus;
 	}
-	
-//	@JsonIgnore
-//	@ManyToOne(fetch = FetchType.LAZY)
-//	@JoinColumn(name = "bank_id")
-//	private Bank bank ;
-
-//	@JsonIgnore
-//	@ManyToOne(fetch = FetchType.LAZY)
-//	@JoinColumn(name = "deduction_cycle_id")
-//    private DeductionCycle deductionCycle ;
-
-	
 
 }

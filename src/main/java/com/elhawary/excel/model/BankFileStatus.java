@@ -19,8 +19,8 @@ public class BankFileStatus {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long bankFileStatusId ;
 	
-	private String name_arabic ;
-	private String name_english ;
+	private String nameArabic ;
+	private String nameEnglish ;
 
 	public Long getBankFileStatusId() {
 		return bankFileStatusId;
@@ -30,21 +30,23 @@ public class BankFileStatus {
 		this.bankFileStatusId = bankFileStatusId;
 	}
 
-	public String getName_arabic() {
-		return name_arabic;
+	public String getNameArabic() {
+		return nameArabic;
 	}
 
-	public void setName_arabic(String name_arabic) {
-		this.name_arabic = name_arabic;
+	public void setNameArabic(String nameArabic) {
+		this.nameArabic = nameArabic;
 	}
 
-	public String getName_english() {
-		return name_english;
+	public String getNameEnglish() {
+		return nameEnglish;
 	}
 
-	public void setName_english(String name_english) {
-		this.name_english = name_english;
+	public void setNameEnglish(String nameEnglish) {
+		this.nameEnglish = nameEnglish;
 	}
+
+
 	
 	
 }

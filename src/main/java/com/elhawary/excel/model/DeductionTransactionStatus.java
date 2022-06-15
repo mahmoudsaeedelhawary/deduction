@@ -22,8 +22,8 @@ public class DeductionTransactionStatus {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long deductionTransactionStatusId ;
 	
-	private String name_arabic ;
-	private String name_english ;
+	private String nameArabic ;
+	private String nameEnglish ;
 	
 	@OneToOne(mappedBy =  "deductionTransactionStatus", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)

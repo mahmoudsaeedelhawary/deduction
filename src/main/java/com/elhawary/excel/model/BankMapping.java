@@ -12,14 +12,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BankMapping {
 
-	private String donatorName, bankCode, projectCode ,amount ,fromAccnt,toAccnt;
+	private String donatorName, bankCode, projectCode, amount, fromAccnt, toAccnt, deductionDate, currency, bankNam,
+			homeReference, deductionReferenceCredit, deductionReferenceDebit;
 
 	public BankMapping() {
-		
+
 	}
- 	
+
 	public BankMapping(String donatorName, String bankCode, String projectCode, String amount, String fromAccnt,
-			String toAccnt) {
+			String toAccnt, String deductionDate, String currency, String bankNam, String homeReference,
+			String deductionReferenceCredit, String deductionReferenceDebit) {
 		super();
 		this.donatorName = donatorName;
 		this.bankCode = bankCode;
@@ -27,53 +29,61 @@ public class BankMapping {
 		this.amount = amount;
 		this.fromAccnt = fromAccnt;
 		this.toAccnt = toAccnt;
+		this.deductionDate = deductionDate;
+		this.currency = currency;
+		this.bankNam = bankNam;
+		this.homeReference = homeReference;
+		this.deductionReferenceCredit = deductionReferenceCredit;
+		this.deductionReferenceDebit = deductionReferenceDebit;
 	}
 
 	public String getDonatorName() {
 		return donatorName;
 	}
 
-	public void setDonatorName(String donatorName) {
-		this.donatorName = donatorName;
-	}
-
 	public String getBankCode() {
 		return bankCode;
-	}
-
-	public void setBankCode(String bankCode) {
-		this.bankCode = bankCode;
 	}
 
 	public String getProjectCode() {
 		return projectCode;
 	}
 
-	public void setProjectCode(String projectCode) {
-		this.projectCode = projectCode;
-	}
-
 	public String getAmount() {
 		return amount;
 	}
 
-	public void setAmount(String amount) {
-		this.amount = amount;
-	}
 	public String getFromAccnt() {
 		return fromAccnt;
-	}
-
-	public void setFromAccnt(String fromAccnt) {
-		this.fromAccnt = fromAccnt;
 	}
 
 	public String getToAccnt() {
 		return toAccnt;
 	}
 
-	public void setToAccnt(String toAccnt) {
-		this.toAccnt = toAccnt;
+	public String getDeductionDate() {
+		return deductionDate;
 	}
+
+	public String getCurrency() {
+		return currency;
+	}
+
+	public String getBankNam() {
+		return bankNam;
+	}
+
+	public String getHomeReference() {
+		return homeReference;
+	}
+
+	public String getDeductionReferenceCredit() {
+		return deductionReferenceCredit;
+	}
+
+	public String getDeductionReferenceDebit() {
+		return deductionReferenceDebit;
+	}
+
 	
 }

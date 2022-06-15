@@ -1,4 +1,6 @@
 package com.elhawary.excel.model;
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,14 +14,19 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class BankTransactionStatus {
+public class BankTransactionStatus implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4529467873678371297L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long bankTransactionStatusId;
 
-	private String name_arabic;
-	private String name_english;
+	private String nameArabic ;
+	private String nameEnglish ;
 
 
 	public Long getBankTransactionStatusId() {
@@ -31,24 +38,20 @@ public class BankTransactionStatus {
 		this.bankTransactionStatusId = bankTransactionStatusId;
 	}
 
-
-	public String getName_arabic() {
-		return name_arabic;
+	public String getNameArabic() {
+		return nameArabic;
 	}
 
-
-	public void setName_arabic(String name_arabic) {
-		this.name_arabic = name_arabic;
+	public void setNameArabic(String nameArabic) {
+		this.nameArabic = nameArabic;
 	}
 
-
-	public String getName_english() {
-		return name_english;
+	public String getNameEnglish() {
+		return nameEnglish;
 	}
 
-
-	public void setName_english(String name_english) {
-		this.name_english = name_english;
+	public void setNameEnglish(String nameEnglish) {
+		this.nameEnglish = nameEnglish;
 	}
 	
 	
